@@ -1,0 +1,93 @@
+<div class="appointments">
+    <div>
+        <h3>Gestión de citas</h3>
+    </div>
+    <div class="container">
+          <div class="col" >
+            <h5>Datos del Asegurado</h5>
+            <div class="card" >
+                <div class="card-body">
+                    <div class="row">
+                      <h6 class="card-subtitle mb-2 text-muted">DNI</h6>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-sm-4 mb-2">
+                        <input type="text" class="form-control" placeholder="8 dígitos" [formControl]="controlDni" maxlength="8">
+                      </div>
+                      <div class="form-group col-sm-2 mb-2">
+                        <button type="button" class="btn btn-primary" (click)="searchEnsured($event)"> Buscar</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-sm-6 mb-2">
+                        <h6 class="card-subtitle mb-2 text-muted">Nombre</h6>
+                        <input type="text" class="form-control" placeholder="" disabled value={{name}}>
+                      </div>
+                      <div class="form-group col-sm-6 mb-2">
+                        <h6 class="card-subtitle mb-2 text-muted">Apellido</h6>
+                        <input type="text" class="form-control" placeholder="" disabled value={{lastname}}>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-sm-4 mb-2">
+                          <h6 class="card-subtitle mb-2 text-muted">Historia clínica</h6>
+                          <input type="text" class="form-control" placeholder="" disabled value={{id_history}}>
+                        </div>
+                        <div class="form-group col-sm-4 mb-2">
+                          <h6 class="card-subtitle mb-2 text-muted">DNI</h6>
+                          <input type="text" class="form-control" placeholder="" disabled value={{dni}}>
+                        </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <br>
+          <div class="col">
+            <h5>Médicos</h5>
+            <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                      <div class="form-group col-sm-6 mb-2">
+                        <h6 class="card-subtitle mb-2 text-muted">Especialidad</h6>
+                        <select class="form-select" style="font-size:1rem"
+                                [formControl]="controlSpecialty"
+                                (change)="onSelectedSpecialty()">
+                              <option selected>Seleccione</option>
+                              <option *ngFor = "let spe of specialties" value={{spe.id}}>{{spe.name}}</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group col-sm-6 mb-2">
+                        <h6 class="card-subtitle mb-2 text-muted">Médico</h6>
+                        <select class="form-select" style="font-size:1rem"
+                                [formControl]="controlMedic"
+                                (change)="onSelectedMedic()">
+                              <option selected>Seleccione</option>
+                              <option *ngFor = "let med of medics " value = {{med.id}}>{{med.name}} {{med.lastname}}</option>
+                        </select>
+                      </div>
+                      
+                      <div class="form-group col-sm-6 mb-2">
+                        <h6 class="card-subtitle mb-2 text-muted">Fecha</h6>
+                        <input class="form-control" id="date-input" type="date" name="date-input"  style="font-size:1rem"
+                               [formControl]="controlDate">
+                      </div>
+
+                      <div class="form-group col-sm-6 mb-2">
+                        <h6 class="card-subtitle mb-2 text-muted">Horario</h6>
+                        <select id="select2" name="select2" class="form-control form-control-lg" style="font-size:1rem"
+                                [formControl]="controlSchedule">
+                              <option selected>Seleccione</option>
+                              <option *ngFor = "let sche of schedules" value = {{sche}}>{{sche}}</option>
+                        </select>
+                      </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+    </div>
+    <div style="text-align:center; margin:2rem">
+        <button type="button" class="btn btn-primary" (click)="generateAppointment()">Generar cita</button>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="user-detail" fxLayout="column">
+    <div class="mat-card-title" fxLayoutAlign="center center">
+        <mat-card class="mat-elevation-z12" fxFlex="70%">
+            <span>Mi Informacion/Mi Perfil</span>
+        </mat-card>
+    </div>
+    <div class="mat-card-content" fxLayout="row wrap" fxLayoutAlign="center center">
+        <mat-card class="mat-elevation-z12" fxFlex="70%" fxFlex.xs="100%">
+            <mat-card-title>
+                <span>Mi Perfil</span>
+            </mat-card-title>
+            <mat-divider></mat-divider>
+            <mat-card-content fxLayout="column" fxLayoutAlign="space-around none" >
+                <div class="cellItems" fxLayout="row" fxLayoutAlign="center center"  fxFlex="50%">
+                    <span class="material-icons">person</span>
+                    <mat-label class="boldFont">Nombre:</mat-label>
+                    <mat-label>{{name}}</mat-label>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="50%">
+                    <span class="material-icons">fingerprint</span>
+                    <mat-label class="boldFont">Apellidos: </mat-label>
+                    <mat-label>{{lastname}}</mat-label>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="50%">
+                    <span class="material-icons">wc</span>
+                    <mat-label class="boldFont">Género: </mat-label>
+                    <mat-label>{{gender}}</mat-label>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="50%">
+                    <span class="material-icons">wysiwyg</span>
+                    <mat-label class="boldFont">DNI: </mat-label>
+                    <mat-label>{{dni}}</mat-label>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="50%">
+                    <span class="material-icons">date_range</span>
+                    <mat-label class="boldFont">Fecha de Nacimiento: </mat-label>
+                    <mat-label>{{birthdate}}</mat-label>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="50%">
+                    <span class="material-icons">mail_outline</span>
+                    <mat-label class="boldFont">E-mail: </mat-label>
+                    <mat-label>{{ email}}</mat-label>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="50%">
+                    <span class="material-icons">call</span>
+                    <mat-label class="boldFont">Telefono: </mat-label>
+                    <mat-label>{{phone}}</mat-label>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="50%">
+                    <span class="material-icons">gavel</span>
+                    <mat-label class="boldFont">Estado Civil: </mat-label>
+                    <mat-label>{{civil_status}} </mat-label>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="50%">
+                    <span class="material-icons">location_on</span>
+                    <mat-label class="boldFont">Direccion: </mat-label>
+                    <mat-label>{{address}}</mat-label>
+                </div>
+                
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+</div>

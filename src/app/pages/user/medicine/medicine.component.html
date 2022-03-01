@@ -1,0 +1,325 @@
+<div class="medicine">
+  <div>
+    <h3>Medicina</h3>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col md-4">
+        <h5>Lista de espera</h5>
+        <div class="card">
+          <div class="table-responsive-xxl">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">DNI</th>
+                  <th scope="col">Apellidos</th>
+                  <th scope="col">Nombre</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>08013021</td>
+                  <td>Lazaro Shacua</td>
+                  <td>Erick Adrian</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>06541237</td>
+                  <td>Lázaro Jimenez</td>
+                  <td>Herminion</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>78065412</td>
+                  <td>Parker Chomba</td>
+                  <td>Peter</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 30px 0px;">
+
+  </div>
+
+
+
+  <div class="container">
+
+
+
+
+    <div class="col">
+      <h5>Datos del Asegurado</h5>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <h6 class="card-subtitle mb-2 text-muted">DNI</h6>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-4 mb-2">
+              <input type="text" class="form-control" placeholder="8 dígitos" [formControl]="controlDni" maxlength="8">
+            </div>
+            <div class="form-group col-sm-2 mb-2">
+              <button type="button" class="btn btn-primary" (click)="searchEnsured($event)"> Buscar</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6 mb-2">
+              <h6 class="card-subtitle mb-2 text-muted">Nombre</h6>
+              <input type="text" class="form-control" placeholder="" disabled value={{name}}>
+            </div>
+            <div class="form-group col-sm-6 mb-2">
+              <h6 class="card-subtitle mb-2 text-muted">Apellido</h6>
+              <input type="text" class="form-control" placeholder="" disabled value={{lastname}}>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-4 mb-2">
+              <h6 class="card-subtitle mb-2 text-muted">Historia clínica</h6>
+              <input type="text" class="form-control" placeholder="" disabled value={{id_history}}>
+            </div>
+            <div class="form-group col-sm-4 mb-2">
+              <h6 class="card-subtitle mb-2 text-muted">DNI</h6>
+              <input type="text" class="form-control" placeholder="" disabled value={{dni}}>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding-top:20px ;">
+
+    </div>
+
+    <div class="row">
+      <div class="col md-4">
+        <h5>Sintomas del paciente</h5>
+        <div class="card">
+          <div class="card-body">
+
+
+
+            <h6 class="card-subtitle mb-2 text-muted">Seleccione la dolencia del paciente</h6>
+            <div class="row">
+              <div class="form-group col-sm-4 mb-2">
+                <div class="col-md-14 mb-2">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Cabeza</span>
+                    </div>
+                    <div>
+                      <mat-slide-toggle [color]="color" style="margin-left:1rem;" (change)="valorModificadoSintomas(1)">
+                      </mat-slide-toggle>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-sm-4 mb-2">
+                <div class="col-md-14 mb-2">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Cuello y tiroides</span>
+                    </div>
+                    <div>
+                      <mat-slide-toggle [color]="color" style="margin-left:1rem;" (change)="valorModificadoSintomas(2)">
+                      </mat-slide-toggle>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-sm-4 mb-2">
+                <div class="col-md-14 mb-2">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Agudeza visual</span>
+                    </div>
+                    <div>
+                      <mat-slide-toggle [color]="color" style="margin-left:1rem;" (change)="valorModificadoSintomas(3)">
+                      </mat-slide-toggle>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-4 mb-2">
+                <div class="col-md-14 mb-2">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Agudeza auditiva</span>
+                    </div>
+                    <div>
+                      <mat-slide-toggle [color]="color" style="margin-left:1rem;" (change)="valorModificadoSintomas(4)">
+                      </mat-slide-toggle>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-sm-4 mb-2">
+                <div class="col-md-14 mb-2">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Piel, faneras y mucosa</span>
+                    </div>
+                    <div>
+                      <mat-slide-toggle [color]="color" style="margin-left:1rem;" (change)="valorModificadoSintomas(5)">
+                      </mat-slide-toggle>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-sm-4 mb-2">
+                <div class="col-md-14 mb-2">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Cardiopulmonar</span>
+                    </div>
+                    <div>
+                      <mat-slide-toggle [color]="color" style="margin-left:1rem;" (change)="valorModificadoSintomas(6)">
+                      </mat-slide-toggle>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-4 mb-2">
+                <div class="col-md-14 mb-2">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Tórax y mamas</span>
+                    </div>
+                    <div>
+                      <mat-slide-toggle [color]="color" style="margin-left:1rem;" (change)="valorModificadoSintomas(7)">
+                      </mat-slide-toggle>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-sm-4 mb-2">
+                <div class="col-md-14 mb-2">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Abdomen</span>
+                    </div>
+                    <div>
+                      <mat-slide-toggle [color]="color" style="margin-left:1rem;" (change)="valorModificadoSintomas(8)">
+                      </mat-slide-toggle>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-sm-4 mb-2">
+                <div class="col-md-14 mb-2">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Columna</span>
+                    </div>
+                    <div>
+                      <mat-slide-toggle [color]="color" style="margin-left:1rem;" (change)="valorModificadoSintomas(9)">
+                      </mat-slide-toggle>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-4 mb-2">
+                <div class="col-md-14 mb-2">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Genito-urinario</span>
+                    </div>
+                    <div>
+                      <mat-slide-toggle [color]="color" style="margin-left:1rem;"
+                        (change)="valorModificadoSintomas(10)"></mat-slide-toggle>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-sm-4 mb-2">
+                <div class="col-md-14 mb-2">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Extremidades</span>
+                    </div>
+                    <div>
+                      <mat-slide-toggle [color]="color" style="margin-left:1rem; "
+                        (change)="valorModificadoSintomas(11)"></mat-slide-toggle>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-sm-4 mb-2">
+                <div class="col-md-14 mb-2">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Neurológico</span>
+                    </div>
+                    <div>
+                      <mat-slide-toggle [color]="color" style="margin-left:1rem;"
+                        (change)="valorModificadoSintomas(12)"></mat-slide-toggle>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-sm-12 mb-2">
+              <h6 class="card-subtitle mb-2 text-muted">Observaciones</h6>
+              <textarea id="textarea-input" name="textarea-input" rows="9" placeholder=""
+                class="form-control" #box (change) = "asignarObservaciones(box.value)"></textarea>
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">Receta</h6>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Medicamento</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Frecuencia</th>
+                    <th scope="col">Días</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td><input type="text" placeholder="" class="form-control"></td>
+                    <td><input type="text" placeholder="" class="form-control"></td>
+                    <td><input type="text" placeholder="" class="form-control"></td>
+                    <td><input type="text" placeholder="" class="form-control"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td><input type="text" placeholder="" class="form-control"></td>
+                    <td><input type="text" placeholder="" class="form-control"></td>
+                    <td><input type="text" placeholder="" class="form-control"></td>
+                    <td><input type="text" placeholder="" class="form-control"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td><input type="text" placeholder="" class="form-control"></td>
+                    <td><input type="text" placeholder="" class="form-control"></td>
+                    <td><input type="text" placeholder="" class="form-control"></td>
+                    <td><input type="text" placeholder="" class="form-control"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      
+      <div style="text-align:center; margin:1rem">
+        <button type="button" class="btn btn-primary" style="margin: 1rem;" (click) ="generarRecetaMedica()" >Generar Cita</button>
+      </div>
+    </div>

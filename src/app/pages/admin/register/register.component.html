@@ -1,0 +1,81 @@
+<div class="register-component" fxLayout="column" >
+
+    <div class="mat-card-title" fxLayoutAlign="center center"   >
+        <mat-card class="mat-elevation-z12" fxFlex="80%" >
+           <span>Nuevo Usuario/ Registro de Usuario</span>
+        </mat-card>
+    </div>
+    <div class="mat-card-content"  fxLayout="row wrap" fxLayoutAlign="center center">
+        <form fxFlex="80%" fxFlex.xs="100%">
+            <mat-card  class="mat-elevation-z12">
+                <mat-card-title>
+                    <span>Registro de Usuario</span>
+                </mat-card-title>
+                <mat-divider></mat-divider>
+                <mat-card-content>
+                    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+                        <mat-form-field appearance="outline"  fxFlex="70%">
+                            <mat-label>Nombre Completo</mat-label>
+                            <input matInput placeholder="Just a placeholder" required type="text">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+                        <mat-form-field appearance="outline" fxFlex="70%">
+                            <mat-label>Apellido Paterno</mat-label>
+                            <input matInput required type="text">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+                        <mat-form-field appearance="outline" fxFlex="70%">
+                            <mat-label>Apellido Materno</mat-label>
+                            <input matInput required type="text">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+                        <mat-form-field appearance="outline" fxFlex="70%">
+                            <mat-label>DNI</mat-label>
+                            <input matInput #input maxlength="8" required type="text" maxlenght="8">
+                            <!--<mat-hint align="end">{{input.value?.length || 0}}/8</mat-hint>-->
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+                        <mat-form-field appearance="outline" fxFlex="70%">
+                            <mat-label>Fecha Nacimiento</mat-label>
+                            <input matInput required placeholder="dd/mm/aaaa" type="date">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+                        <mat-form-field appearance="outline" fxFlex="70%">
+                            <mat-label>e-mail</mat-label>
+                            <input matInput required placeholder="usuario@mail.com" type="email">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+                        <mat-form-field appearance="outline" fxFlex="70%">
+                            <mat-label>Telefono</mat-label>
+                            <input matInput required placeholder="999-999-999" type="tel"
+                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" maxlength="11">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+                        <mat-form-field appearance="outline" fxFlex="70%">
+                            <mat-label>Estado Civil</mat-label>
+                            <input matInput required type="text">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+                        <mat-form-field appearance="outline" fxFlex="70%">
+                            <mat-label>Direccion</mat-label>
+                            <input matInput required type="text">
+                        </mat-form-field>
+                    </div>
+                    <div class="button" fxLayoutAlign="center center" >
+                        <button type="submit" color=primary mat-raised-button fxFlex="30%" >
+                            Registrar Usuario
+                        </button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </form>
+    </div>
+</div>

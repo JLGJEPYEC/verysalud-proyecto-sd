@@ -1,0 +1,108 @@
+<div style="display: block;">
+    <ng-container>
+        <mat-sidenav-container>
+            <mat-sidenav class="sidenav-menu-container" #sidenav mode="over" closed disableClose
+                [fixedInViewport]="true"  class="mat-elevation-z0">
+                <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+                    <mat-icon *ngIf="!sidenav.opened">
+                        menu
+                    </mat-icon>
+                    <mat-icon *ngIf="sidenav.opened" style="color: white">
+                        close
+                    </mat-icon>
+                </button>
+                <mat-nav-list>
+                    <div class="sidenav-menu-container-inner">
+                        <div id="perfil">
+                            <div class="logo">
+                                <img class="logo" src="">
+                            </div>
+                            <div style="text-align: center;">
+                                <img class="perfil" src="assets/perfil.jpg">
+                            </div>
+                            <div style="color: white; text-align: center; padding-top: 10px;">
+                                <h6>{{name}}</h6>
+                                <h6 style="color:white;">{{email}}</h6>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="sidenav-menu-body">
+                            <div class="sidenav-menu-list">
+                                <div class="sidenav-menu-items">
+                                    <a mat-list-item style="padding:0px;" routerLink="user-detail">
+                                        <div class="sdnav-menu-items_li">
+                                            <div class="sdnav-menu-items-inner">
+                                                <span class="material-icons">source</span>
+                                                <div style="padding-left: 10px;">MI INFORMACION</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="sidenav-menu-items">
+                                    <a mat-list-item style="padding:0px;" routerLink="register">
+                                        <div class="sdnav-menu-items_li">
+                                            <div class="sdnav-menu-items-inner">
+                                                <span class="material-icons">person_add</span>
+                                                <div style="padding-left: 10px;">NUEVO USUARIO</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="sidenav-menu-items">
+                                    <a mat-list-item style="padding:0px;" routerLink="users">
+                                        <div class="sdnav-menu-items_li">
+                                            <div class="sdnav-menu-items-inner">
+                                                <span class="material-icons">people_outline</span>
+                                                <div style="padding-left: 10px;">USUARIOS</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </mat-nav-list>
+            </mat-sidenav>
+            <mat-sidenav-content>
+                <mat-toolbar class="cabecera" >
+                    <div fxFlex>
+                        <button mat-button (click)="sidenav.toggle()">
+                            <span class="material-icons">menu</span>
+                        </button>
+                    </div>
+                    <div fxFlex="nogrow" fxLayout="row" fxLayoutAlign="end center">
+                        <div style="font-size: 15px; padding-bottom: 0px;" fxFlexAlign="stretch" layout-align="center">
+                            <button mat-button [matMenuTriggerFor]="menu">{{name}}<span class="material-icons">
+                                    expand_more
+                                </span>
+                            </button>
+                            <mat-menu #menu="matMenu" xPosition="before">
+                                <button mat-menu-item class="buttonMenu">
+                                    <a mat-list-item routerLink="user-detail">
+                                        <span class="material-icons" id="blogOut">face</span>
+                                        Perfil
+                                    </a>
+                                </button>
+                                <button mat-menu-item class="buttonMenu">
+                                    <a mat-list-item (click)="logout()">
+                                        <span class="material-icons" id="blogOut">power_settings_new</span>
+                                        Salir
+                                    </a>
+                                </button>
+                            </mat-menu>
+                        </div>
+                        <div fxFlexAlign="stretch" layout-align="center">
+                            <button mat-button class="buttonMenu" (click)="logout()">
+                                <span class="material-icons" id="logOut">power_settings_new</span>
+                                SALIR
+                            </button>
+                        </div>
+                    </div>
+                </mat-toolbar>
+                <mat-divider></mat-divider>
+                <router-outlet></router-outlet>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </ng-container>
+</div>

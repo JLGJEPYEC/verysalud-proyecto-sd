@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/login"> Sistema de Atención Hospitalaria</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+<div class="login-page">
+  <div class="background">
+      <img src="assets/hospital.jpg" class="img">
+  </div>
+  <div class="login">
+      <mat-card class="mat-elevation-z12">
+        <mat-card-header>
+          <mat-card-title style="text-align: center">
+            BIENVENIDO
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form action="">
+            <mat-form-field>
+              <input type="email" matInput placeholder="Usuario" [formControl]="controlUser">
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input type="password" matInput placeholder="Constraseña" [formControl]="controlPass">
+              <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+            <button type="button" mat-raised-button color="warn" class="login-button" (click)="login()">
+              Ingresar
+              <mat-icon matSuffix>arrow_right_alt</mat-icon>
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+  </div>
+</div>
+
+
+
+
+<!--<div class="login-page">
+  <div class="imagen">
+    <img src="assets/vacuna.jpg" class="img">
+    <div class="mat-card">
+      <mat-card class="mat-elevation-z12">
+          <mat-card-title style="text-align:center;">SignIn/SignUp</mat-card-title>
+        <mat-card-title style="text-align: center">Bienvenido</mat-card-title>
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+          <mat-tab>
+            <mat-card-content>
+              <form action="">
+                <mat-form-field>
+                  <input type="email" matInput placeholder="Usuario" />
+                  <mat-icon matSuffix>person</mat-icon>
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="password" matInput placeholder="Constraseña" />
+                  <mat-icon matSuffix>lock</mat-icon>
+                </mat-form-field>
+                <button mat-raised-button color="warn" class="login-button">
+                  Ingresar
+                  <mat-icon matSuffix>arrow_right_alt</mat-icon>
+                </button>
+              </form>
+            </mat-card-content>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card>
+    </div>
+  </div>
+</div>-->

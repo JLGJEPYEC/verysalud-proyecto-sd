@@ -1,0 +1,390 @@
+<div class="patients">
+  <div>
+      <h3>Asegurados</h3>
+  </div>
+<br>
+<div class="container">
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Registrar Nuevo Asegurado
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <div class="card"  >
+            <div class="card-body">
+                <div class="row">
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-4 mb-2">
+                      <h6 class="card-subtitle mb-2 text-muted">Apellido Paterno</h6>
+                      <input type="text"  name="input1-group2" class="form-control" placeholder="" [formControl] = "ctrlLastname_p">
+                    </div>
+                    <div class="form-group col-sm-4 mb-2">
+                      <h6 class="card-subtitle mb-2 text-muted">Apellido Materno</h6>
+                      <input type="text"  name="input1-group2" class="form-control" placeholder="" [formControl] = "ctrlLastname_m">
+                    </div>
+                    <div class="form-group col-sm-4 mb-2">
+                      <h6 class="card-subtitle mb-2 text-muted">Nombres</h6>
+                      <input type="text"  name="input1-group2" class="form-control" placeholder="" [formControl] = "ctrlName">
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">DNI</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="8 dígitos" [formControl] = "ctrlDni" maxlength="8">
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Historia Clínica</h6>
+                    <input type="text" class="form-control" placeholder="" disabled>
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Fecha de Nacimiento</h6>
+                    <input class="form-control" id="date-input" type="date" name="date-input" placeholder="date" style="font-size:1rem" [formControl] = "ctrlBirthday">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Sexo</h6>
+                    <select id="select2" name="select2" class="form-control form-control-mb"style="font-size:1rem" [formControl] = "ctrlGender">
+                      <option value="Masculino">Masculino</option>
+                      <option value="Femenino">Femenino</option>
+                  </select>
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Celular</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="999999999" [formControl] = "ctrlPhone" maxlength="9">
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Correo Electrónico</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="" [formControl] = "ctrlEmail">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Estado Civil</h6>
+                    <select id="select2" name="select2" class="form-control form-control-mb"style="font-size:1rem" [formControl] = "ctrlCivil_status">
+                      <option value="Soltero">Soltero</option>
+                      <option value="Casado">Casado</option>
+                      <option value="Viudo">Viudo</option>
+                      <option value="Divorciado">Divorciado</option>
+                  </select>
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">País de Origen</h6>
+                    <select id="select2" name="select2" class="form-control form-control-mb"style="font-size:1rem" [formControl] = "ctrlCountry">
+                      <option value="Perú">Perú</option>
+                      <option value="Extranjero">Extranjero</option>
+                  </select>
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted" >Departamento</h6>
+                    <select id="select2" name="select2" class="form-control form-control-mb"style="font-size:1rem" [formControl] = "ctrlDepartment">
+                      <option value="Lima">Lima</option>
+                  </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Distrito</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="" [formControl] = "ctrlDistrict">
+                  </div>
+                  <div class="form-group col-sm-8 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Dirección</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="" [formControl] = "ctrlAddress">
+                  </div>
+                </div>
+                <div class="row">
+                  <div style="text-align:center">
+                    <button type="button" class="btn btn-primary" style="margin: 1rem;" (click) = "registerEnsured($event)">Registrar Nuevo Asegurado</button>
+                  </div>
+              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Buscar Asegurado
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <div class="card">
+            <div class="card-body">
+                <div class="row">
+                  <h6 class="card-subtitle mb-2 text-muted">DNI del Paciente Asegurado</h6>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-3 mb-2">
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="8 digitos" [formControl]="ctrlBuscarDni" maxlength="8">
+                  </div>
+                  <div class="form-group col-sm-2 mb-2">
+                    <button type="button" class="btn btn-primary" (click) = "searchEnsured($event)">Buscar</button>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-4 mb-2">
+                      <h6 class="card-subtitle mb-2 text-muted">Apellido Paterno</h6>
+                      <input type="text"  name="input1-group2" class="form-control" placeholder="Apellido Paterno" value={{lastname_p}}>
+                    </div>
+                    <div class="form-group col-sm-4 mb-2">
+                      <h6 class="card-subtitle mb-2 text-muted">Apellido Materno</h6>
+                      <input type="text"  name="input1-group2" class="form-control" placeholder="Apellido Materno" value={{lastname_m}}>
+                    </div>
+                    <div class="form-group col-sm-4 mb-2">
+                      <h6 class="card-subtitle mb-2 text-muted">Nombres</h6>
+                      <input type="text"  name="input1-group2" class="form-control" placeholder="Nombres" value={{name}}>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">DNI</h6>
+                    <input type="text" class="form-control" placeholder="" disabled value={{dni}}>
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Historia Clínica</h6>
+                    <input type="text" class="form-control" placeholder="" disabled value={{id_history}}>
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Fecha de Nacimiento</h6>
+                    <input class="form-control" id="date-input" type="date" name="date-input" placeholder="date" style="font-size:1rem"  value={{birthday}}>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Sexo</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="Masculino o Femenino"  value={{gender}}>
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Celular</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="999999999"  value={{phone}}>
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Correo Electrónico</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="Correo Electrónico"  value={{email}}>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Estado Civil</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="Estado Civil"  value={{civil_status}}>
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">País de Origen</h6>
+                    <select id="select2" name="select2" class="form-control form-control-mb"style="font-size:1rem" >
+                      <option >{{country}}</option>
+                  </select>
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Departamento</h6>
+                    <select id="select2" name="select2" class="form-control form-control-mb"style="font-size:1rem" >
+                      <option>{{department}}</option>
+                  </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Distrito</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="" value={{district}}>
+                  </div>
+                  <div class="form-group col-sm-8 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Dirección</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="Dirección"  value={{address}}>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-12 mb-2">
+                    <div style="text-align:center">
+                      <button type="button" class="btn btn-warning" style="margin: 1rem;">Modificar Paciente</button>
+                      <button type="button" class="btn btn-danger" style="margin: 1rem;">Eliminar Paciente</button>
+                   </div>
+                  </div>
+              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Familiares de Asegurados
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <div class="card"  >
+            <div class="card-body">
+                <div class="row">
+                  <h6 class="card-subtitle mb-2 text-muted">DNI del Asegurado Titular</h6>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-3 mb-2">
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="DNI">
+                  </div>
+                  <div class="form-group col-sm-2 mb-2">
+                    <button type="button" class="btn btn-primary">Buscar</button>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-6 mb-2">
+                      <h6 class="card-subtitle mb-2 text-muted">Apellidos</h6>
+                      <input type="text" class="form-control" placeholder="" disabled>
+                    </div>
+                    <div class="form-group col-sm-6 mb-2">
+                      <h6 class="card-subtitle mb-2 text-muted">Nombres</h6>
+                      <input type="text" class="form-control" placeholder="" disabled>
+                    </div>
+                </div>
+                <div class="row">
+                  <h6 class="card-subtitle mb-2 text-muted">Familiares del Asegurado Titular</h6>
+                </div>
+                <div class="table-responsive-xxl">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">DNI</th>
+                      <th scope="col">Nº Historia</th>
+                      <th scope="col">Apellidos</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Relacion</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>08013021</td>
+                      <td>4654625</td>
+                      <td>Lazaro Shacua</td>
+                      <td>Erick Adrian</td>
+                      <td>Hermano</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>06541237</td>
+                      <td>0756586921</td>
+                      <td>Lázaro Jimenez</td>
+                      <td>Herminion</td>
+                      <td>Hermanon</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>78065412</td>
+                      <td>08465325821</td>
+                      <td>Parker Chomba</td>
+                      <td>Peter</td>
+                      <td>Superheroe</td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+                <div class="row">
+                  <h6 class="card-subtitle mb-2 text-muted">Datos del Nuevo Familiar</h6>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-4 mb-2">
+                      <h6 class="card-subtitle mb-2 text-muted">Apellido Paterno</h6>
+                      <input type="text"  name="input1-group2" class="form-control" placeholder="Apellido Paterno">
+                    </div>
+                    <div class="form-group col-sm-4 mb-2">
+                      <h6 class="card-subtitle mb-2 text-muted">Apellido Materno</h6>
+                      <input type="text"  name="input1-group2" class="form-control" placeholder="Apellido Materno">
+                    </div>
+                    <div class="form-group col-sm-4 mb-2">
+                      <h6 class="card-subtitle mb-2 text-muted">Nombres</h6>
+                      <input type="text"  name="input1-group2" class="form-control" placeholder="Nombres">
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">DNI</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="DNI">
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Historia Clínica</h6>
+                    <input type="text" class="form-control" placeholder="" disabled>
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Fecha de Nacimiento</h6>
+                    <input class="form-control" id="date-input" type="date" name="date-input" placeholder="date" style="font-size:1rem">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Sexo</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="Masculino o Femenino">
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Celular</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="999999999">
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Correo Electrónico</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="Correo Electrónico">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Estado Civil</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="Estado Civil">
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">País de Origen</h6>
+                    <select id="select2" name="select2" class="form-control form-control-mb"style="font-size:1rem" >
+                      <option value="0">Please select</option>
+                      <option value="1">Perú</option>
+                      <option value="2">Extranjero</option>
+                  </select>
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Departamento</h6>
+                    <select id="select2" name="select2" class="form-control form-control-mb"style="font-size:1rem" >
+                      <option value="0">Please select</option>
+                      <option value="1">Tumbes</option>
+                      <option value="2">Lima</option>
+                      <option value="3">Ancash</option>
+                  </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Distrito</h6>
+                    <select id="select2" name="select2" class="form-control form-control-mb"style="font-size:1rem" >
+                      <option value="0">Please select</option>
+                      <option value="1">Bla</option>
+                      <option value="2">Bla</option>
+                      <option value="3">Bla</option>
+                  </select>
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Dirección</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="Dirección">
+                  </div>
+                  <div class="form-group col-sm-4 mb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Relación con el Titular</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="Relación con el Titular">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-3 mb-2">
+                  </div>
+                  <div class="form-group col-sm-6 mb-2">
+                    <div style="text-align:center">
+                      <button type="button" class="btn btn-warning">Agregar Familiar</button>
+                   </div>
+                  </div>
+                  <div class="form-group col-sm-3 mb-2">
+                  </div>
+              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
